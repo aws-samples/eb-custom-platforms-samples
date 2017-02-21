@@ -1,0 +1,13 @@
+**********************
+THIRD PARTY COMPONENTS
+**********************
+This software includes third party software subject to the following copyrights:
+- Bootstrap : Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+
+The licenses for these third party components are included in LICENSE.txt
+
+Disclaimer
+----------
+
+Please note, this sample is meant as an example to build a custom platform based on Amazon Linux to use on AWS Elastic Beanstalk. This is not intended to be used as a platform for running any kind of prodcution workloads.
+

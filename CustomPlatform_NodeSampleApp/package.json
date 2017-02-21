@@ -1,0 +1,13 @@
+{
+  "name": "eb-custom-platform-node-sample",
+  "version": "1.0.0",
+  "description": "Sample app to deploy to the platforms created using samples for Node Custom Platform.",
+  "scripts": {
+    "start": "node app.js",
+    "poststart" : "node app2.js"
+  },
+  "dependencies": {
+    "express": "~3.0.1",
+    "ejs": "~0.8.3"
+  }  
+}
