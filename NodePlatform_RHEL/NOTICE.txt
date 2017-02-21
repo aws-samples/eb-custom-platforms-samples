@@ -1,0 +1,5 @@
+Disclaimer
+----------
+
+Please note, this sample is meant as an example to build a custom platform based on RHEL to use on AWS Elastic Beanstalk. This is not intended to be used as a platform for running any kind of prodcution workloads.
+

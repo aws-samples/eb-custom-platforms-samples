@@ -1,0 +1,38 @@
+{
+  "variables": {
+    "platform_name": "{{env `AWS_EB_PLATFORM_NAME`}}",
+    "platform_version": "{{env `AWS_EB_PLATFORM_VERSION`}}",
+    "platform_arn": "{{env `AWS_EB_PLATFORM_ARN`}}"
+  },
+  "builders": [
+    {
+      "type": "amazon-ebs",
+      "name": "HVM AMI builder",
+      "region": "us-west-2",
+      "source_ami": "ami-7c803d1c",
+      "instance_type": "m3.medium",
+      "ssh_username": "ubuntu",
+      "ssh_pty": "true",
+      "ami_name": "NodeJs running on Ubuntu Server 16.04 LTS (built on {{isotime \"20060102150405\"}})",
+      "tags": {
+        "eb_platform_name": "{{user `platform_name`}}",
+        "eb_platform_version": "{{user `platform_version`}}",
+        "eb_platform_arn": "{{user `platform_arn`}}"
+      }
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "file",
+      "source": "builder",
+      "destination": "/tmp/"
+    },
+    {
+      "type": "shell",
+      "execute_command": "chmod +x {{ .Path }}; {{ .Vars }} sudo {{ .Path }}",
+      "scripts": [
+        "builder/builder.sh"
+      ]
+    }
+  ]
+}
