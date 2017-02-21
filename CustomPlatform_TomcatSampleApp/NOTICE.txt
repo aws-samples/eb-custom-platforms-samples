@@ -1,0 +1,5 @@
+**********************
+THIRD PARTY COMPONENTS
+**********************
+This software includes third party software subject to the following copyrights:
+- Bootstrap : Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
