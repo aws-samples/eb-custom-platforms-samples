@@ -1,0 +1,8 @@
+[Unit]
+Description=Script to monitor Tomcat process
+
+[Service]
+User=tomcat7
+ExecStart=/bin/bash -c "cd /etc/tomcat-apps/current/tomcat-app; exec bin/startup.sh"
+Restart=on-failure
+

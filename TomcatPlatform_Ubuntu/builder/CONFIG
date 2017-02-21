@@ -1,0 +1,36 @@
+########################
+# $BUILDER_DIR is a magic property set by the builder.sh script automatically
+#########################
+
+#############
+### NGINX ###                         
+#############
+SETUP_NGINX_CONFIG_SRC="$BUILDER_DIR/platform-uploads/etc/nginx"
+NGINX_DEST_DIR="/etc/nginx"
+
+####################
+### SECURE LINUX ###
+####################
+USE_SELINUX=false
+
+######################
+## BEANSTALK CONFIG ##
+######################
+BEANSTALK_DIR="/opt/elasticbeanstalk"
+SETUP_HOOKS_DIR="$BUILDER_DIR/platform-uploads/opt/elasticbeanstalk/hooks"
+SETUP_LOGS_DIR="$BUILDER_DIR/platform-uploads/opt/elasticbeanstalk/tasks"
+
+
+######################
+### TOMCAT CONFIG   ####
+######################
+NODE_DIR="/var/nodejs"
+
+########################
+### CONTAINER CONFIG ###
+########################
+CONTAINER_SCRIPTS_DIR="/opt/TomcatPlatform"
+CONFIG_DIR="$CONTAINER_SCRIPTS_DIR"
+CONTAINER_CONFIG_FILE_DIR="/etc/TomcatPlatform"
+CONTAINER_CONFIG_FILE_NAME="platform.config"
+CONTAINER_CONFIG="$CONTAINER_CONFIG_FILE_DIR/$CONTAINER_CONFIG_FILE_NAME"
