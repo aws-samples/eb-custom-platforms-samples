@@ -7,6 +7,7 @@ See the Packer template, *tomcat_platform.json*, for details on the AMI and
 scripts that the builder runs as it creates the custom platform.
 
 To use this sample app, please update *tomcat_platform.json* with:
+
 1. The AMI id you would like to use as your base AMI to create the platform.
 2. The region you want to create your platform in.
 
