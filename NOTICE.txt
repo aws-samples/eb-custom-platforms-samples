@@ -1,0 +1,3 @@
+eb-custom-platforms-sample
+(Elastic Beanstalk Custom Platform Samples)
+Copyright 2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
