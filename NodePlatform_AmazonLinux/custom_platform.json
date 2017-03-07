@@ -8,12 +8,12 @@
     {
       "type": "amazon-ebs",
       "name": "HVM AMI builder",
-      "region": "us-west-2",
-      "source_ami": "ami-f173cc91",
+      "region": "",
+      "source_ami": "",
       "instance_type": "m3.medium",
       "ssh_username": "ec2-user",
       "ssh_pty": "true",
-      "ami_name": "CustomPlatform AmazonLinux 2016.09.1 running Node (built on {{isotime \"20060102150405\"}})",
+      "ami_name": "Beanstalk Custom Platform running Node on AmazonLinux (built on {{isotime \"20060102150405\"}})",
       "tags": {
         "eb_platform_name": "{{user `platform_name`}}",
         "eb_platform_version": "{{user `platform_version`}}",
