@@ -12,7 +12,6 @@ Instructions for installing the EB CLI can be found [here](http://docs.aws.amazo
 ```
 cd NodePlatform_Ubuntu
 ```
-
 ### Updating Packer template
 All provided custom platform samples use [Packer](http://www.packer.io) for creating AMIs. 
 
@@ -33,10 +32,12 @@ $ ebp create
 ```
 After the platform has been created successfully, you will see the ARN for the Beanstalk platform in the event stream on your console. Note the platform ARN, you will need it to create your environment below. 
 
- **Note** : You will need an instance profile to create a platform successfully. The CLI will create an instance profile for you named **aws-elasticbeanstalk-custom-platform-ec2-role** with the correct permissions for the samples to work.
-  To use your own instance profile, ensure that your instance profile has all of the policies included in the Beanstalk Managed role under the name **AWSElasticBeanstalkCustomPlatformforEC2Role**. You can read more on attaching managed policies to your role [here](http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html#aws-managed-policies)
+**Note** : You will need an instance profile to create a platform successfully. The CLI will create an instance profile for you named **aws-elasticbeanstalk-custom-platform-ec2-role** with the correct permissions for the samples to work. To use your own instance profile, ensure that your instance profile has all of the policies included in the Beanstalk Managed role under the name **AWSElasticBeanstalkCustomPlatformforEC2Role**. You can read more on attaching managed policies to your role [here](http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html#aws-managed-policies)
 
-As your custom platform is creating, you will see logs from the Packer build stream to your console. Any errors when building the platform when running Packer should be relayed back. You can check the logs for any platform build using ```eb platform logs --help``` command.
+As your custom platform is creating, you will see logs from the Packer build stream to your console. Any errors when building the platform when running Packer should be relayed back. You can check the logs for any platform build using the logs command below.
+```
+$ eb platform logs --help
+```
 
 ### Creating Beanstalk environment
 Once you have succesfully created the platform you can test the platform by creating an Elastic Beanstalk environment in a new workspace using the platform ARN that was provided in the previous step.
@@ -44,5 +45,4 @@ Once you have succesfully created the platform you can test the platform by crea
 $ cd /path/to/new/environment/workspace
 $ eb init
 $ eb create -p <platform arn>
-````
-
+```
