@@ -1,4 +1,5 @@
-#   Copyright 2016-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+#!/bin/bash -xe
+#   Copyright  2016-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 #
 #   Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with the License. A copy of the License is located at
 #
@@ -7,7 +8,7 @@
 #   or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
 
 
-#!/bin/bash -xe
+
 
 . $BUILDER_DIR/CONFIG
 
@@ -22,12 +23,12 @@ tar -zxf $BUILDER_DIR/node-v4.4.5-linux-x64.tar.gz -C $NODE_DIR
 
 echo "Validate Node.js got installed."
 if [ -a $NODE_DIR/node-v4.4.5-linux-x64/bin/node ]; then
-	NODE_VER=`$NODE_DIR/node-v4.4.5-linux-x64/bin/node --version`
-	if [ -z "$NODE_VER" ];  then
-		echo "Node could not be installed. "
-	else
-		echo "Node successfully installed.."
-	fi
+    NODE_VER=`$NODE_DIR/node-v4.4.5-linux-x64/bin/node --version`
+    if [ -z "$NODE_VER" ];  then
+        echo "Node could not be installed. "
+    else
+        echo "Node successfully installed.."
+    fi
 fi
 
 echo "Creating base directories for platform."
