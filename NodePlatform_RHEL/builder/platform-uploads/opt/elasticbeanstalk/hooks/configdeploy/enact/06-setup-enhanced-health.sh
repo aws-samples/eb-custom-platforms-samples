@@ -20,10 +20,10 @@ then
     RESTART_HEALTHD=''
     ## Track application pids
     for NAME in `cat $LIVE_DIR/pm2/process.json  | jq '.apps[].name' | sed 's/"//g'`; do 
-        for PID_FILE in `ls $PM2_HOME | grep $NAME`; do
+        for PID_FILE in `ls $PM2_HOME/pids | grep $NAME`; do
             if [ ! -z "$PID_FILE" ]; then
                 APP=$(echo $PID_FILE | sed 's/.pid//g'); 
-                /opt/elasticbeanstalk/bin/healthd-track-pidfile --name $APP --location $PM2_HOME/$PID_FILE 
+                /opt/elasticbeanstalk/bin/healthd-track-pidfile --name $APP --location $PM2_HOME/pids/$PID_FILE 
                 RESTART_HEALTHD='true'
             fi
         done

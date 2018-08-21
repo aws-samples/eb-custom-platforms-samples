@@ -9,7 +9,7 @@
 
 
 
-BUILDER_DIR="/tmp/builder/"
+BUILDER_DIR="/tmp/builder"
 
 . $BUILDER_DIR/CONFIG
 

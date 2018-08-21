@@ -46,8 +46,8 @@ echo "CONTAINER_SCRIPTS_DIR=$CONTAINER_SCRIPTS_DIR" >> $CONTAINER_CONFIG
 
 ##### INSTALL PM2 ######
 echo "install pm2 globally"
-$NODE_DIR/node-v4.4.5-linux-x64/bin/npm install -g minimatch
-$NODE_DIR/node-v4.4.5-linux-x64/bin/npm install -g pm2
+$NODE_DIR/node-v4.4.5-linux-x64/bin/npm install -g minimatch@3.0.4
+$NODE_DIR/node-v4.4.5-linux-x64/bin/npm install -g pm2@2.10.4
 
 ls -l $NODE_DIR/node-v4.4.5-linux-x64/bin
 

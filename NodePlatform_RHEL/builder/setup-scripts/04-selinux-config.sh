@@ -18,8 +18,9 @@ elif [ "true" = "$USE_SELINUX" ]; then
     echo "Setting selinux configs."
     setenforce 0
     semanage permissive -a httpd_t
-    semanage port -a -t http_port_t -p tcp 8081
-    semanage port -a -t http_port_t -p tcp 8080
+    # in the latest RHEL ami, 8081 && 8080 has already defined
+    # semanage port -a -t http_port_t -p tcp 8081
+    # semanage port -a -t http_port_t -p tcp 8080
     setsebool -P httpd_can_network_connect 1
     chcon -Rt httpd_sys_content_t /var/app/current/
     chcon -u system_u -t httpd_config_t $NGINX_DEST_DIR/conf.d/proxy.conf
