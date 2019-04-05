@@ -37,7 +37,7 @@ function getEnvParams(  ) {
 	var options = getOptions();
 	if(options) {
 		var envParams = options['aws:elasticbeanstalk:application:environment'];
-		envParams["NODE_ENV"] = "production";
+		if(!envParams["NODE_ENV"]) { envParams["NODE_ENV"] = "production"; } // NODE_ENV is set to productiion unless otherwise specified
 		if (envParams) { return envParams; }
 	}
 	return { "NODE_ENV" : "production" };
